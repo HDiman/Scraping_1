@@ -48,8 +48,14 @@ soup = BeautifulSoup(src, 'html.parser')
 # post_divs = soup.find(class_="post__text").find_parents("div", "user__post")
 # print(post_divs)
 
-next_elem = soup.find(class_="post__title").next_element.next_element.text
-print(next_elem)
+# next_elem = soup.find(class_="post__title").next_element.next_element.text
+# print(next_elem)
+#
+# next_elem = soup.find(class_="post__title").find_next().text
+# print(next_elem)
 
-next_elem = soup.find(class_="post__title").find_next().text
-print(next_elem)
+next_sib = soup.find(class_="post__title").find_next_sibling()
+print(next_sib)
+
+next_sib = soup.find(class_="post__title").find_previous_sibling()
+print(next_sib)
