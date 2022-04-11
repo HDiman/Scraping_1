@@ -41,5 +41,15 @@ soup = BeautifulSoup(src, 'html.parser')
 #     link_sn = item.get("href")
 #     print(f"{name_sn}: {link_sn}")
 
-post_text = soup.find(class_="post__text").find_parent("div", "user__blog__wall")
-print(post_text)
+# post_div = soup.find(class_="post__text").find_parent("div", "user__blog__wall")
+# print(post_div)
+
+# search parents up to user__post
+# post_divs = soup.find(class_="post__text").find_parents("div", "user__post")
+# print(post_divs)
+
+next_elem = soup.find(class_="post__title").next_element.next_element.text
+print(next_elem)
+
+next_elem = soup.find(class_="post__title").find_next().text
+print(next_elem)
