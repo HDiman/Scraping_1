@@ -18,6 +18,18 @@ soup = BeautifulSoup(src, 'html.parser')
 # for item in page_h1_all:
 #     print(item.text)
 
-user_name = soup.find("div", class_="user__name")
-# user_name = soup.find("span")
-print(user_name.text.strip())
+# user_name = soup.find("div", class_="user__name")
+# # user_name = soup.find("span")
+# print(user_name.text.strip())
+
+# user_name = soup.find("div", class_="user__name").find("span").text
+# print(user_name)
+
+# find_all_spans_in_users_info = soup.find(class_="user__info").find_all("span")
+# print(find_all_spans_in_users_info)
+
+# for item in find_all_spans_in_users_info:
+#     print(item.text)
+
+# print(find_all_spans_in_users_info[0].text)
+# print(find_all_spans_in_users_info[2].text)
