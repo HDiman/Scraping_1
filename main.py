@@ -34,10 +34,12 @@ soup = BeautifulSoup(src, 'html.parser')
 # print(find_all_spans_in_users_info[0].text)
 # print(find_all_spans_in_users_info[2].text)
 
-social_networks = soup.find(class_="social__networks").find("ul").find_all("a")
-print(social_networks)
-for item in social_networks:
-    name_sn = item.text
-    link_sn = item.get("href")
-    print(f"{name_sn}: {link_sn}")
+# social_networks = soup.find(class_="social__networks").find("ul").find_all("a")
+# print(social_networks)
+# for item in social_networks:
+#     name_sn = item.text
+#     link_sn = item.get("href")
+#     print(f"{name_sn}: {link_sn}")
 
+post_text = soup.find(class_="post__text").find_parent("div", "user__blog__wall")
+print(post_text)
