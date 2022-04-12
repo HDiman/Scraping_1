@@ -63,12 +63,21 @@ soup = BeautifulSoup(src, 'html.parser')
 # next_sib = soup.find(class_="post__date").find_next_sibling().find_next().text
 # print(next_sib)
 
-links = soup.find(class_="some__links").find_all("a")
-print(links)
+# links = soup.find(class_="some__links").find_all("a")
+# print(links)
+#
+# for item in links:
+#     # link_href_atr = item.get("href")
+#     link_href_atr = item["href"]
+#     # link_data_atr = item.get("data-attr")
+#     link_data_atr = item["data-attr"]
+#     print(item.text)
+#     print(link_href_atr)
+#     print(link_data_atr)
 
-for item in links:
-    link_href_atr = item.get("href")
-    link_data_atr = item.get("data-attr")
-    print(item.text)
-    print(link_href_atr)
-    print(link_data_atr)
+# find_word = soup.find("a", text=re.compile("Одежда"))
+# print(find_word)
+
+# parsing one word through site
+find_word = soup.find_all(text=re.compile("([Оо]дежда)"))
+print(find_word)
