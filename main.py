@@ -1,7 +1,7 @@
 import re
 from bs4 import BeautifulSoup
 
-with open("index.html") as file:
+with open("index2.html") as file:
     src = file.read()
 # print(src)
 
@@ -54,8 +54,21 @@ soup = BeautifulSoup(src, 'html.parser')
 # next_elem = soup.find(class_="post__title").find_next().text
 # print(next_elem)
 
-next_sib = soup.find(class_="post__title").find_next_sibling()
-print(next_sib)
+# next_sib = soup.find(class_="post__title").find_next_sibling()
+# print(next_sib)
+#
+# next_sib = soup.find(class_="post__title").find_previous_sibling()
+# print(next_sib)
 
-next_sib = soup.find(class_="post__title").find_previous_sibling()
-print(next_sib)
+# next_sib = soup.find(class_="post__date").find_next_sibling().find_next().text
+# print(next_sib)
+
+links = soup.find(class_="some__links").find_all("a")
+print(links)
+
+for item in links:
+    link_href_atr = item.get("href")
+    link_data_atr = item.get("data-attr")
+    print(item.text)
+    print(link_href_atr)
+    print(link_data_atr)
