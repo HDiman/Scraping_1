@@ -10,7 +10,7 @@ soup = BeautifulSoup(src, 'html.parser')
 # title = soup.title.string
 # print(title)
 
-# .find() or find_all()
+# .find() or .find_all()
 
 # page_h1_all = soup.find_all("h1")
 # print(page_h1_all)
@@ -82,4 +82,8 @@ soup = BeautifulSoup(src, 'html.parser')
 # find_word = soup.find_all(text=re.compile("([Оо]дежда)"))
 # print(find_word)
 
+find_word = soup.find("tr").find("td").find("a").text
+print(find_word)
+# for item in find_word:
+#     print(item)
 
