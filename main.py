@@ -79,5 +79,7 @@ soup = BeautifulSoup(src, 'html.parser')
 # print(find_word)
 
 # parsing one word through site
-find_word = soup.find_all(text=re.compile("([Оо]дежда)"))
-print(find_word)
+# find_word = soup.find_all(text=re.compile("([Оо]дежда)"))
+# print(find_word)
+
+
