@@ -82,8 +82,24 @@ soup = BeautifulSoup(src, 'html.parser')
 # find_word = soup.find_all(text=re.compile("([Оо]дежда)"))
 # print(find_word)
 
-find_word = soup.find("tr").find("td").find("a").text
-print(find_word)
+# find_word = soup.find("tr").find("td").find("a").text
+# find_word = soup.find(class_="title")
+# print(find_word)
 # for item in find_word:
 #     print(item)
 
+# How to split string
+links = soup.find("tr").find("td").text
+print(links)
+split_string = links.split(">", maxsplit=1)[1]
+print(split_string)
+
+
+# for item in links:
+#     # link_href_atr = item.get("href")
+#     link_href_atr = item["href"]
+#     # link_data_atr = item.get("data-attr")
+#     link_data_atr = item["data-attr"]
+#     print(item.text)
+#     print(link_href_atr)
+#     print(link_data_atr)
